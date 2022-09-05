@@ -283,6 +283,14 @@ When complete we can view our:
 - Sphinx generated documentation at https://mcaple.github.io/pythawts/
 - Github repository at https://github.com/mcaple/pythawts.
 
+
+To build the github static pages use
+
+.. code-block:: console
+
+    make gh
+
+
 .. note::
 
     For further development, we may find it useful to style our documentation using the extension *sphinx.ext.githubpages* and a good example
