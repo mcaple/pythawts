@@ -278,7 +278,10 @@ called *gh-pages* which will be used as the source for the static pages for gith
 
 
 
-When complete we can view our documentation at https://mcaple.github.io/pythawts/
+When complete we can view our:
+
+- Sphinx generated documentation at https://mcaple.github.io/pythawts/
+- Github repository at https://github.com/mcaple/pythawts.
 
 .. note::
 
