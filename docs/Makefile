@@ -14,10 +14,25 @@ help:
 
 .PHONY: help Makefile
 
-#.PHONY: github
-github:
+#.PHONY: gh
+gh:
 	make html
-	cp -a "$(BUILDDIR)"/html/. ../github-docs
+
+    echo "We will create html in the gh-pages branch"
+    git checkout gh-pages
+
+	cd ..
+	cp -a docs/"$(BUILDDIR)"/html/. docs/html/.
+
+    git commit -m "Updated html gh-pages"
+    git push origin
+
+    echo "Leave the gh-pages branch"
+    git checkout main
+
+	echo "Switching back to docs"
+	cd docs
+
 
 #.PHONY: github
 #.ONESHELL:
