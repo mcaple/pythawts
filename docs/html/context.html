@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python thoughts &mdash; python-thoughts 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script src="_static/toggleprompt.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Pythawts API" href="api_reference.html" />
+    <link rel="prev" title="Welcome to python-thoughts’s" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> python-thoughts
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Python thoughts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#context">Context</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install">Install</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#initial">Initial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#useful-extensions">Useful extensions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#package">Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#github">Github</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#quick-links">Quick links</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#examples-of-sphinx-generated-documentation">Examples of Sphinx-generated documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sphinx">Sphinx</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#basic">Basic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#advanced">Advanced</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#restructuredtext-rst-extension-format">reStructuredText (<cite>.rst</cite> extension) format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#documenting-projects-with-sphinx">Documenting projects with Sphinx</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference.html">Pythawts API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">python-thoughts</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Python thoughts</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/context.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="python-thoughts">
+<h1>Python thoughts<a class="headerlink" href="#python-thoughts" title="Permalink to this headline"></a></h1>
+<p>Version 1.0</p>
+<section id="context">
+<h2>Context<a class="headerlink" href="#context" title="Permalink to this headline"></a></h2>
+<p>The idea of this documentation is to give myself an opportunity to create some documentation for a package that will attempt to give
+clarity on how all my Python projects should be implemented. It is a collection of my current best practices along with some stuff I
+find useful along the way. It is also the first time I have used Sphinx and it is always better to have something to do to learn a
+project.</p>
+<p>Special mention should be given to <a class="reference external" href="https://github.com/sadielbartholomew/sphinx-from-scratch">sphinx-from-scratch</a> for starting me on the Sphinx journey and
+a lot of the links that I mention in <a class="reference internal" href="#quick-links"><span class="std std-ref">Quick links</span></a> are a direct copy of Sadie’s work.</p>
+<section id="install">
+<h3>Install<a class="headerlink" href="#install" title="Permalink to this headline"></a></h3>
+<p>I will break the install up into a number of steps which combined allow a new project to be set up to be documented.</p>
+<section id="initial">
+<h4>Initial<a class="headerlink" href="#initial" title="Permalink to this headline"></a></h4>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">echo Only if not exists</span>
+<span class="go">pip install sphinx</span>
+
+<span class="go">mkdir python-thoughts</span>
+<span class="go">cd python-thoughts</span>
+
+<span class="go">mkdir docs</span>
+<span class="go">cd docs</span>
+
+<span class="go">sphinx-quickstart</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="line-block">
+<div class="line">&gt; <em>Separate source and build directories (y/n) [n]: y</em></div>
+<div class="line">&gt; <em>Project name: python-thoughts</em></div>
+<div class="line">&gt; <em>Author name(s): Mark Caple</em></div>
+<div class="line">&gt; <em>Project release []: 1.0</em></div>
+<div class="line">&gt; <em>Project language [en]:</em></div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">make html</span>
+
+<span class="go">cd build/html</span>
+<span class="go">npx http-server -p 9998</span>
+</pre></div>
+</div>
+<p>Now in a browser surf to <a class="reference external" href="http://localhost:9998">http://localhost:9998</a></p>
+</section>
+<section id="useful-extensions">
+<h4>Useful extensions<a class="headerlink" href="#useful-extensions" title="Permalink to this headline"></a></h4>
+<p>Make following changes to docs/source/conf.py.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">...</span> <span class="n">replace</span> <span class="n">the</span> <span class="n">empty</span> <span class="n">extensions</span> <span class="nb">list</span>
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;sphinx_rtd_theme&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;sphinx.ext.autodoc&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;sphinx.ext.autosummary&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;sphinx_copybutton&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;sphinx_toggleprompt&quot;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.autosectionlabel&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="o">...</span> <span class="n">replace</span> <span class="n">the</span> <span class="n">default</span> <span class="n">html_theme</span>
+<span class="n">html_theme</span> <span class="o">=</span> <span class="s2">&quot;sphinx_rtd_theme&quot;</span>
+
+<span class="o">...</span> <span class="n">at</span> <span class="n">the</span> <span class="n">end</span> <span class="n">of</span> <span class="n">the</span> <span class="n">file</span> <span class="n">paste</span>
+<span class="c1"># Generate _autosummary stub files as part of the build process</span>
+<span class="n">autosummary_generate</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1"># Make sure the target is unique</span>
+<span class="n">autosectionlabel_prefix_document</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</section>
+<section id="package">
+<h4>Package<a class="headerlink" href="#package" title="Permalink to this headline"></a></h4>
+<p>As a lot of our time will be spent documenting packages that we produce, it makes
+sense to create this documentation from a simplistic package called <em>pythawts</em>. We will
+create modules for each of the topics that we feel we need to give some thought and hence our package
+will evolve. The first topic we shall discuss is the for loop and so we will create
+here the initial content of that <strong>core</strong> module (by using core for all our module names we are in the position
+of being able to split the topic of <em>for loops</em> into multiple modules) and will explain
+how this module should be added to the package.</p>
+<p>We will create a very simple package for our code documentation which will be based on
+<a class="reference external" href="https://www.freecodecamp.org/news/build-your-first-python-package/">build-your-first-python-package</a>.</p>
+<p>At the root of the project (1 up from docs folder)</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mkdir pythawts</span>
+<span class="go">cd pythawts</span>
+<span class="go">touch __init__.py</span>
+<span class="go">touch setup.py</span>
+
+<span class="go">mkdir forthawts</span>
+<span class="go">cd forthawts</span>
+<span class="go">touch core.py</span>
+</pre></div>
+</div>
+<p>For each of the files copy the following content.</p>
+<p><strong>setup.py</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
+
+<span class="n">setup</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;pythawts&#39;</span><span class="p">,</span>
+    <span class="n">version</span><span class="o">=</span><span class="s1">&#39;1.0&#39;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="p">(</span>
+        <span class="s1">&#39;A simple package that distills all my current&#39;</span>
+        <span class="s1">&#39;beliefs on how Python should be written.&#39;</span>
+    <span class="p">),</span>
+    <span class="n">license</span><span class="o">=</span><span class="s1">&#39;MIT&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>core.py</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">This module contains what I consider best practices for &#39;for loops&#39;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="k">def</span> <span class="nf">original_idea</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The description about original_idea</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;john&quot;</span><span class="p">,</span> <span class="s2">&quot;jim&quot;</span><span class="p">,</span> <span class="s2">&quot;mark&quot;</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">names</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+<p><strong>__init__.py</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Raise an error elegantly if the module fails to import:</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">pythawts</span>
+<span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">.forthawts.core</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p>Now we have created these files it is time to use our <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html">autodoc</a> (include documentation from docstrings) and
+<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html">autosummary</a> (generates function/method/attribute summary lists)
+extensions to pull in the documentation automatically.</p>
+<p>Create a file called api_reference.rst in docs/source and add the following.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Pythawts API</span>
+<span class="gh">============</span>
+
+<span class="p">..</span> <span class="ow">currentmodule</span><span class="p">::</span> pythawts
+
+<span class="cp">.. autosummary:\:</span>
+<span class="cp">    :toctree: _autosummary</span>
+
+<span class="cp">    forthawts.core</span>
+</pre></div>
+</div>
+<p><strong>At the time of writing I could not find a way of escaping the autosummary line above so you will need to delete the ‘\’ character
+on the autosummary line after adding the content. If the autosummary was not done like this Sphinx would attempt to load autosummary
+from within this context file which is not what is required.</strong></p>
+<p>Now add a line containing api_reference directly under <em>context</em> in index.rst</p>
+<p>When you now run</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">make html</span>
+</pre></div>
+</div>
+<p>you will see the warning <em>“failed to import ‘pythawts.forthawts.core’: no module named pythawts.forthawts.core”</em>. To overcome
+this we need to inform Sphinx where our code is. Go ahead and modify <em>conf.py</em> so that the path setup is as below. This will inform
+<em>autosummary</em> that our code is two directories up from where <em>index.rst</em> is found.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>-- Path setup --------------------------------------------------------------
+
+<span class="gp"># </span>If extensions <span class="o">(</span>or modules to document with autodoc<span class="o">)</span> are <span class="k">in</span> another directory,
+<span class="gp"># </span>add these directories to sys.path here. If the directory is relative to the
+<span class="gp"># </span>documentation root, use os.path.abspath to make it absolute, like shown here.
+<span class="gp">#</span>
+<span class="go">import os</span>
+<span class="go">import sys</span>
+
+<span class="go">sys.path.insert(0, os.path.abspath(&quot;../..&quot;))</span>
+</pre></div>
+</div>
+<p>As a final check to make sure you are setup switch to the root directory of python-thoughts and run a python interpreter pasting in
+the following</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythawts.forthawts.core</span> <span class="kn">import</span> <span class="n">original_idea</span>
+<span class="n">original_idea</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If your interpreter is pre 3.9.2 then run</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">echo &quot;set enable-bracketed-paste off&quot; &gt;&gt; ~/.inputrc</span>
+</pre></div>
+</div>
+<p>in your console before running the interpreter, see <a class="reference external" href="https://www.linkedin.com/pulse/python-barfs-multiple-lines-fixed-daren-wilson">multiple line interpreter issue</a></p>
+</div>
+</section>
+<section id="github">
+<h4>Github<a class="headerlink" href="#github" title="Permalink to this headline"></a></h4>
+<p>We will be hosting this in github so we need a way to make this as painless as possible. Initially we will be following the
+procedure mentioned in <a class="reference external" href="https://python.plainenglish.io/how-to-host-your-sphinx-documentation-on-github-550254f325ae">how-to-host-your-sphinx-documentation-on-github</a>
+but <a class="reference external" href="https://www.docslikecode.com/articles/github-pages-python-sphinx/">docslikecode</a>
+is also useful.</p>
+<ul>
+<li><p>Go to your github repository</p></li>
+<li><p>Create a branch called <em>gh-pages</em></p></li>
+<li><p>Open the settings tab on the repository and select <em>Pages</em> from the sidebar</p></li>
+<li><p>Select the branch <em>gh-pages</em>, folder <em>/docs</em> and hit <em>Save</em></p></li>
+<li><p>Run</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">fetch</span> <span class="n">origin</span>
+</pre></div>
+</div>
+<p>to retrieve the <em>gh-pages</em> branch</p>
+</li>
+<li><p>Create an empty file called <em>.nojekyll</em> in your docs folder (used to tell github to not do any styling)</p></li>
+<li><p>Create an html file in your docs folder called <em>index.html</em> with the following content</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">meta</span> <span class="n">http</span><span class="o">-</span><span class="n">equiv</span><span class="o">=</span><span class="s2">&quot;refresh&quot;</span> <span class="n">content</span><span class="o">=</span><span class="s2">&quot;0; url=./html/index.html&quot;</span> <span class="o">/&gt;</span>
+</pre></div>
+</div>
+<p>this allows us to redirect into the html folder that we will create below</p>
+</li>
+<li><p>Create an html folder in your docs folder called <em>html</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;We will create html in the gh-pages branch&quot;</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">gh</span><span class="o">-</span><span class="n">pages</span>
+
+<span class="n">echo</span> <span class="s2">&quot;Root directory&quot;</span>
+<span class="n">mkdir</span> <span class="n">docs</span><span class="o">/</span><span class="n">html</span>
+<span class="n">cp</span> <span class="o">-</span><span class="n">a</span> <span class="n">docs</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">html</span><span class="o">/.</span> <span class="n">docs</span><span class="o">/</span><span class="n">html</span><span class="o">/.</span>
+<span class="n">git</span> <span class="n">add</span> <span class="n">docs</span><span class="o">/</span><span class="n">html</span><span class="o">/.</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;added initial html&quot;</span>
+<span class="n">git</span> <span class="n">push</span> <span class="n">origin</span>
+
+<span class="n">echo</span> <span class="s2">&quot;Leave the gh-pages branch&quot;</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">main</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>When complete we can view our documentation at <a class="reference external" href="https://mcaple.github.io/pythawts/">https://mcaple.github.io/pythawts/</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For further development, we may find it useful to style our documentation using the extension <em>sphinx.ext.githubpages</em> and a good example
+of how to do this can be found <a class="reference external" href="https://gist.github.com/KCarretto/28d362210b41cfe28363fe8309ce5e6d">here</a></p>
+</div>
+</section>
+</section>
+</section>
+<section id="quick-links">
+<span id="id1"></span><h2>Quick links<a class="headerlink" href="#quick-links" title="Permalink to this headline"></a></h2>
+<section id="examples-of-sphinx-generated-documentation">
+<h3>Examples of Sphinx-generated documentation<a class="headerlink" href="#examples-of-sphinx-generated-documentation" title="Permalink to this headline"></a></h3>
+<p>It is hard to tell what has been made with Sphinx without looking at the
+codebase source, but often if you scroll to the bottom of some
+documentation you can often see a “Created using Sphinx &lt;sphinx version&gt;”
+note in the footer. A small number of examples are referenced below.</p>
+<ul class="simple">
+<li><p>A large but absolutely not comprehensive listing collected by the Sphinx
+team: <a class="reference external" href="https://www.sphinx-doc.org/en/master/examples.html">https://www.sphinx-doc.org/en/master/examples.html</a></p></li>
+<li><p>Sphinx’s own documentation (made with Sphinx, of course!):
+<a class="reference external" href="https://www.sphinx-doc.org/en/master/">https://www.sphinx-doc.org/en/master/</a></p></li>
+<li><p>Python 3 documentation: <a class="reference external" href="https://docs.python.org/3/">https://docs.python.org/3/</a></p></li>
+<li><p>Python 2 documentation: <a class="reference external" href="https://docs.python.org/3/">https://docs.python.org/3/</a></p></li>
+<li><p>Tornado documentation: <a class="reference external" href="https://www.tornadoweb.org/en/stable/">https://www.tornadoweb.org/en/stable/</a></p></li>
+<li><p>Official RST documentation (note it is also made in Sphinx):
+<a class="reference external" href="https://docutils.readthedocs.io/en/sphinx-docs/user/rst/quickstart.html">https://docutils.readthedocs.io/en/sphinx-docs/user/rst/quickstart.html</a></p></li>
+<li><p>Dask documentation: <a class="reference external" href="https://docs.dask.org/en/latest/">https://docs.dask.org/en/latest/</a></p></li>
+<li><p>JupyterHub documentation: <a class="reference external" href="https://jupyterhub.readthedocs.io/en/stable/">https://jupyterhub.readthedocs.io/en/stable/</a></p></li>
+<li><p>NumPy documentation: <a class="reference external" href="https://numpy.org/doc/stable/reference/">https://numpy.org/doc/stable/reference/</a></p></li>
+<li><p>A small (slightly old) listing of non-Python projects with Sphinx
+documentation:
+<a class="reference external" href="https://ericholscher.com/blog/2014/feb/11/sphinx-isnt-just-for-python/">https://ericholscher.com/blog/2014/feb/11/sphinx-isnt-just-for-python/</a></p></li>
+<li><p>An example of a book made with Sphinx: <a class="reference external" href="https://www.theoretical-physics.net/">https://www.theoretical-physics.net/</a></p></li>
+</ul>
+</section>
+<section id="sphinx">
+<h3>Sphinx<a class="headerlink" href="#sphinx" title="Permalink to this headline"></a></h3>
+<section id="basic">
+<h4>Basic<a class="headerlink" href="#basic" title="Permalink to this headline"></a></h4>
+<ul class="simple">
+<li><p>Sphinx documentation homepage: <a class="reference external" href="https://www.sphinx-doc.org/en/master/">https://www.sphinx-doc.org/en/master/</a></p></li>
+<li><p>Quick start including <cite>sphinx-quickstart</cite> command:
+<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/quickstart.html">https://www.sphinx-doc.org/en/master/usage/quickstart.html</a></p></li>
+<li><p>HTML themes: <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/theming.html">https://www.sphinx-doc.org/en/master/usage/theming.html</a></p></li>
+</ul>
+</section>
+<section id="advanced">
+<h4>Advanced<a class="headerlink" href="#advanced" title="Permalink to this headline"></a></h4>
+<ul class="simple">
+<li><p>Guidance on extensions:
+<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/index.html">https://www.sphinx-doc.org/en/master/usage/extensions/index.html</a></p></li>
+<li><p>An “awesome” listing of extra Sphinx resources:
+<a class="reference external" href="https://github.com/yoloseem/awesome-sphinxdoc">https://github.com/yoloseem/awesome-sphinxdoc</a></p></li>
+<li><p>Big listing of even more HTML themes: <a class="reference external" href="https://sphinx-themes.org/">https://sphinx-themes.org/</a></p></li>
+<li><p>Our customisation of the “alabaster” default theme, in practice:
+<a class="reference external" href="https://ncas-cms.github.io/cf-python/">https://ncas-cms.github.io/cf-python/</a></p></li>
+<li><p>Example Sphinx extension project repositories:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">sphinx-copybutton</span></code> (button to copy code in code examples):
+<a class="reference external" href="https://github.com/executablebooks/sphinx-copybutton">https://github.com/executablebooks/sphinx-copybutton</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sphinx-toggleprompt</span></code> (button to hide prompts and outputs in
+console-like code examples):
+<a class="reference external" href="https://github.com/jurasofish/sphinx-toggleprompt">https://github.com/jurasofish/sphinx-toggleprompt</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sphinx-pyreverse</span></code> (generates UML diagramms of the code or parts of
+it into the documentation): <a class="reference external" href="https://github.com/alendit/sphinx-pyreverse">https://github.com/alendit/sphinx-pyreverse</a></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="restructuredtext-rst-extension-format">
+<h4>reStructuredText (<cite>.rst</cite> extension) format<a class="headerlink" href="#restructuredtext-rst-extension-format" title="Permalink to this headline"></a></h4>
+<ul class="simple">
+<li><p>Official reStructuredText documentation (note it is also made in Sphinx):
+<a class="reference external" href="https://docutils.readthedocs.io/en/sphinx-docs/user/rst/quickstart.html">https://docutils.readthedocs.io/en/sphinx-docs/user/rst/quickstart.html</a></p></li>
+<li><p>Helpful cheatseets:</p>
+<ul>
+<li><p><a class="reference external" href="https://docutils.sourceforge.io/docs/user/rst/quickref.html">https://docutils.sourceforge.io/docs/user/rst/quickref.html</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ralsina/rst-cheatsheet/blob/master/rst-cheatsheet.rst">https://github.com/ralsina/rst-cheatsheet/blob/master/rst-cheatsheet.rst</a></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="documenting-projects-with-sphinx">
+<h4>Documenting projects with Sphinx<a class="headerlink" href="#documenting-projects-with-sphinx" title="Permalink to this headline"></a></h4>
+<ul class="simple">
+<li><p>A nice blog post: <a class="reference external" href="https://medium.com/&#64;richdayandnight/a-simple-tutorial-on-how-to-document-your-python-project-using-sphinx-and-rinohtype-177c22a15b5b">https://medium.com/&#64;richdayandnight/a-simple-tutorial-on-how-to-document-your-python-project-using-sphinx-and-rinohtype-177c22a15b5b</a></p></li>
+<li><p>Your code should document itself: <a class="reference external" href="https://www.youtube.com/watch?v=JQ8RQru-Y9Y">https://www.youtube.com/watch?v=JQ8RQru-Y9Y</a></p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to python-thoughts’s" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="api_reference.html" class="btn btn-neutral float-right" title="Pythawts API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Mark Caple.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
