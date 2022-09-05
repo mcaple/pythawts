@@ -19,14 +19,10 @@ gh:
 	make html
 	@echo 'We will create html in the gh-pages branch'
 	git checkout gh-pages
-	cd ..
-	cp -a docs/build/html/. docs/html/.
-	git commit -m "Updated html gh-pages"
+	cd ..;	pwd; cp -a ./docs/build/html/. ./docs/html/.
+	cd ..; git commit -m "Updated html gh-pages"
 	git push origin
-	@echo "Leave the gh-pages branch"
 	git checkout main
-	@echo "Switching back to docs"
-	cd docs
 
 
 #.PHONY: github
