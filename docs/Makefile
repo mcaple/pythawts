@@ -20,7 +20,7 @@ gh:
 	@echo 'We will create html in the gh-pages branch'
 	git checkout gh-pages
 	cd ..
-	cp -a docs/"$(BUILDDIR)"/html/. docs/html/.
+	cp -a docs/build/html/. docs/html/.
 	git commit -m "Updated html gh-pages"
 	git push origin
 	@echo "Leave the gh-pages branch"
