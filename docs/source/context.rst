@@ -241,6 +241,9 @@ but `docslikecode
 <https://www.docslikecode.com/articles/github-pages-python-sphinx/>`_
 is also useful.
 
+The idea is that we will create a main branch for our full repository and a branch
+called *gh-pages* which will be used as the source for the static pages for github.
+
 -  Go to your github repository
 -  Create a branch called *gh-pages*
 -  Open the settings tab on the repository and select *Pages* from the sidebar
