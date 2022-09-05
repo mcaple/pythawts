@@ -260,7 +260,7 @@ called *gh-pages* which will be used as the source for the static pages for gith
     <meta http-equiv="refresh" content="0; url=./html/index.html" />
 
    this allows us to redirect into the html folder that we will create below
--  Create an html folder in your docs folder called *html* 
+-  Create an html folder in your docs folder called *html*  and then run
    ::
 
       echo "We will create html in the gh-pages branch"
