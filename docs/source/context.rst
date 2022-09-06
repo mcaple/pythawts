@@ -59,29 +59,34 @@ Now in a browser surf to http://localhost:9998
 Useful extensions
 ^^^^^^^^^^^^^^^^^
 
-Make following changes to docs/source/conf.py. 
+Make the following changes to docs/source/conf.py. 
 
 .. code-block:: python
 
     ... replace the empty extensions list
     extensions = [
-        "sphinx_rtd_theme",
-        "sphinx.ext.autodoc",
-        "sphinx.ext.autosummary",
-        "sphinx_copybutton",
-        "sphinx_toggleprompt",
-        'sphinx.ext.autosectionlabel',
+      "sphinx_rtd_theme",
+      "sphinx_copybutton",
+      "sphinx_toggleprompt",
+      "sphinx.ext.autosectionlabel",
+      "sphinx.ext.napoleon",
+      "sphinx.ext.coverage",
+      "autoapi.extension",
     ]
 
     ... replace the default html_theme
     html_theme = "sphinx_rtd_theme"
 
     ... at the end of the file paste
-    # Generate _autosummary stub files as part of the build process
-    autosummary_generate = True
 
     # Make sure the target is unique
     autosectionlabel_prefix_document = True
+
+
+The extension `AutoAPI
+<https://autoapi.readthedocs.io/>`_ is heavily used in the documentation and has proven to be more automatic than `AutoDoc
+<https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html>`_ and `AutoSummary
+<https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html>`_.
 
 Package
 ^^^^^^^
@@ -152,69 +157,27 @@ For each of the files copy the following content.
 
 .. code-block:: python
 
+    # For a good explanation of packages see
+    # https://py-pkgs.org/
+    # https://py-pkgs.org/04-package-structure.html
+
     # Raise an error elegantly if the module fails to import:
     try:
         import pythawts
     except ImportError as err:
         raise ImportError(err)
 
-    from .forthawts.core import *
+    from pythawts.forthawts.core import *
 
-Now we have created these files it is time to use our `autodoc
-<https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html>`_ (include documentation from docstrings) and 
-`autosummary
-<https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html>`_ (generates function/method/attribute summary lists) 
-extensions to pull in the documentation automatically.
 
-Create a file called api_reference.rst in docs/source and add the following. 
-
-.. code-block:: rst
-
-    Pythawts API
-    ============
-
-    .. currentmodule:: pythawts
-
-    .. autosummary:\:
-        :toctree: _autosummary
-
-        forthawts.core
-
-**At the time of writing I could not find a way of escaping the autosummary line above so you will need to delete the '\\' character
-on the autosummary line after adding the content. If the autosummary was not done like this Sphinx would attempt to load autosummary
-from within this context file which is not what is required.**
-
-Now add a line containing api_reference directly under *context* in index.rst
-
-When you now run 
+You can now run the following to produce the html documentation
 
 .. code-block:: console
 
     make html
 
-you will see the warning *"failed to import 'pythawts.forthawts.core': no module named pythawts.forthawts.core"*. To overcome
-this we need to inform Sphinx where our code is. Go ahead and modify *conf.py* so that the path setup is as below. This will inform 
-*autosummary* that our code is two directories up from where *index.rst* is found.
-
-.. code-block:: console
-
-    # -- Path setup --------------------------------------------------------------
-
-    # If extensions (or modules to document with autodoc) are in another directory,
-    # add these directories to sys.path here. If the directory is relative to the
-    # documentation root, use os.path.abspath to make it absolute, like shown here.
-    #
-    import os
-    import sys
-
-    sys.path.insert(0, os.path.abspath("../.."))
-
 As a final check to make sure you are setup switch to the root directory of python-thoughts and run a python interpreter pasting in 
 the following 
-
-
-
-
 
 .. code:: python
 
