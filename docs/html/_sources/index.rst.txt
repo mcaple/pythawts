@@ -11,7 +11,7 @@ Welcome to python-thoughts's
    :caption: Contents:
 
    context
-   api_reference
+   source_reference   
 
 
 Indices and tables

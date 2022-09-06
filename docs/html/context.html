@@ -8,6 +8,7 @@
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -22,7 +23,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Pythawts API" href="api_reference.html" />
+    <link rel="next" title="Source reference" href="source_reference.html" />
     <link rel="prev" title="Welcome to python-thoughts’s" href="index.html" /> 
 </head>
 
@@ -70,7 +71,8 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="api_reference.html">Pythawts API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_reference.html">Source reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autoapi/index.html">API Reference</a></li>
 </ul>
 
         </div>
@@ -145,28 +147,28 @@ a lot of the links that I mention in <a class="reference internal" href="#quick-
 </section>
 <section id="useful-extensions">
 <h4>Useful extensions<a class="headerlink" href="#useful-extensions" title="Permalink to this headline"></a></h4>
-<p>Make following changes to docs/source/conf.py.</p>
+<p>Make the following changes to docs/source/conf.py.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">...</span> <span class="n">replace</span> <span class="n">the</span> <span class="n">empty</span> <span class="n">extensions</span> <span class="nb">list</span>
 <span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s2">&quot;sphinx_rtd_theme&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;sphinx.ext.autodoc&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;sphinx.ext.autosummary&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;sphinx_copybutton&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;sphinx_toggleprompt&quot;</span><span class="p">,</span>
-    <span class="s1">&#39;sphinx.ext.autosectionlabel&#39;</span><span class="p">,</span>
+  <span class="s2">&quot;sphinx_rtd_theme&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;sphinx_copybutton&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;sphinx_toggleprompt&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;sphinx.ext.autosectionlabel&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;sphinx.ext.napoleon&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;sphinx.ext.coverage&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;autoapi.extension&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 
 <span class="o">...</span> <span class="n">replace</span> <span class="n">the</span> <span class="n">default</span> <span class="n">html_theme</span>
 <span class="n">html_theme</span> <span class="o">=</span> <span class="s2">&quot;sphinx_rtd_theme&quot;</span>
 
 <span class="o">...</span> <span class="n">at</span> <span class="n">the</span> <span class="n">end</span> <span class="n">of</span> <span class="n">the</span> <span class="n">file</span> <span class="n">paste</span>
-<span class="c1"># Generate _autosummary stub files as part of the build process</span>
-<span class="n">autosummary_generate</span> <span class="o">=</span> <span class="kc">True</span>
 
 <span class="c1"># Make sure the target is unique</span>
 <span class="n">autosectionlabel_prefix_document</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 </div>
+<p>The extension <a class="reference external" href="https://autoapi.readthedocs.io/">AutoAPI</a> is heavily used in the documentation and has proven to be more automatic than <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html">AutoDoc</a> and <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html">AutoSummary</a>.</p>
 </section>
 <section id="package">
 <h4>Package<a class="headerlink" href="#package" title="Permalink to this headline"></a></h4>
@@ -221,51 +223,21 @@ how this module should be added to the package.</p>
 </pre></div>
 </div>
 <p><strong>__init__.py</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Raise an error elegantly if the module fails to import:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># For a good explanation of packages see</span>
+<span class="c1"># https://py-pkgs.org/</span>
+<span class="c1"># https://py-pkgs.org/04-package-structure.html</span>
+
+<span class="c1"># Raise an error elegantly if the module fails to import:</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="kn">import</span> <span class="nn">pythawts</span>
 <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
     <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
 
-<span class="kn">from</span> <span class="nn">.forthawts.core</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">pythawts.forthawts.core</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
-<p>Now we have created these files it is time to use our <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html">autodoc</a> (include documentation from docstrings) and
-<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html">autosummary</a> (generates function/method/attribute summary lists)
-extensions to pull in the documentation automatically.</p>
-<p>Create a file called api_reference.rst in docs/source and add the following.</p>
-<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Pythawts API</span>
-<span class="gh">============</span>
-
-<span class="p">..</span> <span class="ow">currentmodule</span><span class="p">::</span> pythawts
-
-<span class="cp">.. autosummary:\:</span>
-<span class="cp">    :toctree: _autosummary</span>
-
-<span class="cp">    forthawts.core</span>
-</pre></div>
-</div>
-<p><strong>At the time of writing I could not find a way of escaping the autosummary line above so you will need to delete the ‘\’ character
-on the autosummary line after adding the content. If the autosummary was not done like this Sphinx would attempt to load autosummary
-from within this context file which is not what is required.</strong></p>
-<p>Now add a line containing api_reference directly under <em>context</em> in index.rst</p>
-<p>When you now run</p>
+<p>You can now run the following to produce the html documentation</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">make html</span>
-</pre></div>
-</div>
-<p>you will see the warning <em>“failed to import ‘pythawts.forthawts.core’: no module named pythawts.forthawts.core”</em>. To overcome
-this we need to inform Sphinx where our code is. Go ahead and modify <em>conf.py</em> so that the path setup is as below. This will inform
-<em>autosummary</em> that our code is two directories up from where <em>index.rst</em> is found.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>-- Path setup --------------------------------------------------------------
-
-<span class="gp"># </span>If extensions <span class="o">(</span>or modules to document with autodoc<span class="o">)</span> are <span class="k">in</span> another directory,
-<span class="gp"># </span>add these directories to sys.path here. If the directory is relative to the
-<span class="gp"># </span>documentation root, use os.path.abspath to make it absolute, like shown here.
-<span class="gp">#</span>
-<span class="go">import os</span>
-<span class="go">import sys</span>
-
-<span class="go">sys.path.insert(0, os.path.abspath(&quot;../..&quot;))</span>
 </pre></div>
 </div>
 <p>As a final check to make sure you are setup switch to the root directory of python-thoughts and run a python interpreter pasting in
@@ -433,7 +405,7 @@ it into the documentation): <a class="reference external" href="https://github.c
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="Welcome to python-thoughts’s" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="api_reference.html" class="btn btn-neutral float-right" title="Pythawts API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="source_reference.html" class="btn btn-neutral float-right" title="Source reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
