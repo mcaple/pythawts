@@ -1,0 +1,15 @@
+:py:mod:`pythawts.forthawts`
+============================
+
+.. py:module:: pythawts.forthawts
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   core/index.rst
+
+
