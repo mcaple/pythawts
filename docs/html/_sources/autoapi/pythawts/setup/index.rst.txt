@@ -1,0 +1,6 @@
+:py:mod:`pythawts.setup`
+========================
+
+.. py:module:: pythawts.setup
+
+

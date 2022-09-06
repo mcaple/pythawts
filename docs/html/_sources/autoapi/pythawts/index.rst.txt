@@ -1,0 +1,15 @@
+:py:mod:`pythawts`
+==================
+
+.. py:module:: pythawts
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   setup/index.rst
+
+
